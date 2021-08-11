@@ -7,7 +7,7 @@ function renderLicenseBadge(license) {
     badge = '![license: MIT](https://img.shields.io/badge/license-MIT-orange)';
   }
   else if(license === 'Apache License'){
-    badge = '!license: Apache(https://img.shields.io/badge/license-Apache%202.0-green)';
+    badge = '![license: Apache](https://img.shields.io/badge/license-Apache%202.0-green)';
   }
   else if(license === 'GPL 3.0'){
     badge = '![license: GPL 3.0](https://img.shields.io/badge/license-GPL%203.0-yellowgreen)';
