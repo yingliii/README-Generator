@@ -6,7 +6,6 @@ const util = require('util');
 
 // internal files
 const generateMarkdown = require('./utils/generateMarkdown');
-const githubApi = require('./utils/api.js');
 
 // Create an array of questions for user input
 const questions = [
@@ -51,7 +50,13 @@ const questions = [
   {
     type: 'input',
     name: 'gitusername',
-    message: 'What is your Github username?'
+    message: 'What is your Github username?',
+    validate: (value) => { 
+      if (value){
+        return true
+      } else {
+        return 'this section can\'t be empty'
+      }}
   }, {
     type: 'input',
     name: 'email',
@@ -62,7 +67,7 @@ const questions = [
 // Create a function to write README file
 function writeToFile(fileName, data) {
   // format the file name for readme file
-  fs.writeFile(`${fileName.toLowerCase().replace(/\s/g, '')}.md`, data, (err) =>
+  fs.writeFile(`${fileName.replace(/\s/g, '')}.md`, data, (err) =>
     err ? console.log(err) : console.log('Success! Your README file has been generated.'))
 }
 
@@ -74,14 +79,8 @@ function init() {
     .then((data) => {
       console.log(data);
       writeToFile(`${data.title}`, generateMarkdown(data));
-
-      githubApi.getUser(data);
     })
-
-    
 }
 
 // Function call to initialize app
 init();
-
-// EXPLAIN: what does the data do here?
