@@ -67,22 +67,28 @@ function generateMarkdown(data) {
   * [Contact](#contact)
 
   ## Project Description
+  ---
   ${data.description}
 
   ## Installation
+  ---
   ${data.installation}
 
   ## Usage
+  ---
   ${data.usage}
 
   ## License
+  ---
   ${renderLicenseBadge(data.license)}
   ${renderLicenseLink(data.license)}
 
   ## Contributor
+  ---
   ${data.contributor}
 
   ## Contact
+  ---
   * Github: [${data.gitusername}](https://github.com/${data.gitusername})
   * E-mail: ${data.email}
 `;
