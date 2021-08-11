@@ -35,7 +35,7 @@
 
   ---
   ## Demo
-  ![demonstration of how to generate README](./assets/gifs/README-Generator-Demo.gif)
+  ![demonstration of how to generate README](./assets/gifs/README-Demo.gif)
   
   ## Contributor
   :woman: Ying
